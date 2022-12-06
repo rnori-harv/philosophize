@@ -99,7 +99,6 @@ const Profile = () => {
               <button id="allTimeButton" className="timeRangeButton mainFont" onClick={() => changeTimeRange("long_term")}>all time</button>
             </div>
 
-            <p id="style">Style: California Driver License </p>
         </div>
       )}
     </>

@@ -216,7 +216,7 @@ export const getTopGenres = async (time_range = 'short_term') => {
     })
   })
 
-  const NUMBER_OF_GENRES = 3;
+  const NUMBER_OF_GENRES = 1000;
   const sortedGenresWithCount = Object.entries(genreDict).sort((x, y) => y[1] - x[1]).slice(0, NUMBER_OF_GENRES);
   
   let sortedGenres = [];

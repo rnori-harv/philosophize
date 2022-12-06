@@ -13,6 +13,28 @@ const Card = ({
     topTrackAlbumCover,
     topGenres
   }) => {
+    let mozi = false;
+    let kongzi = false;
+    let zhuangzi = false;
+    let hanfeizi = false;
+    for (var i = 0; i < topGenres.length; i++) {
+      if (topGenres[i] === "RAP" || topGenres[i] === "HIP HOP" || topGenres[i] === "ROCK" || topGenres[i] === "METAL") {
+        hanfeizi = true;
+        break;
+      }
+      if (topGenres[i] === "EDM" || topGenres[i] === "HOUSE" || topGenres[i] === "TRAP") {
+        mozi = true;
+        break;
+      }
+      if (topGenres[i] === "POP" || topGenres[i] === "R&B" || topGenres[i] === "SOUL" | topGenres[i] === "COUNTRY" || topGenres[i] === "FOLK" || topGenres[i] === "INDIE" || topGenres[i] === "PUNK" ) {
+        zhuangzi = true;
+        break;
+      }
+      if (topGenres[i] === "CLASSICAL" || topGenres[i] === "JAZZ" || topGenres[i] === "BLUES" || topGenres[i] === "OPERA") {
+        kongzi = true;
+        break;
+      }
+    }
   return (
     <div id="card">
       <div id="cardRectangle"></div>
@@ -35,9 +57,9 @@ const Card = ({
         </div>
       </div>
       
-      <p id="licensify">Licensify</p>
+      <p id="licensify">1091</p>
       <p id="country">{profile.country}</p>
-      <p id="driverLicense">DRIVER LICENSE</p>
+      <p id="driverLicense">PHILOSOPHER'S LICENSE</p>
       <p id="displayTimeRange">FROM LAST MONTH</p>
 
       <hr id="topGreenLine"/>
@@ -69,16 +91,32 @@ const Card = ({
           </div>
         </div>
 
-        <div id="trackAndArtistWrapper" className="flexWrapper">
+        {(mozi && !kongzi && !zhuangzi && !hanfeizi) ? (
           <div id="track" className="flexWrapper">
-            <p id="trackKey" className="sectionKey">#1 TRACK</p>
-            <p id="trackValue" className="sectionValue">{topTrackArtists} - {topTrackName}</p>
+            <p id="trackKey" className="sectionKey">PHILOSOPHER</p>
+            <p id="trackValue" className="sectionValue">MOZI</p>
           </div>
-          <div id="artist" className="flexWrapper"> 
-            <p id="artistKey" className="sectionKey">#1 ARTIST</p>
-            <p id="artistValue" className="sectionValue">{topArtist.toUpperCase()}</p>
+        ) : (kongzi && !mozi && !zhuangzi && !hanfeizi) ? (
+          <div id="track" className="flexWrapper">
+            <p id="trackKey" className="sectionKey">PHILOSOPHER</p>
+            <p id="trackValue" className="sectionValue">KONGZI</p>
           </div>
-        </div>
+        ) : (zhuangzi && !mozi && !kongzi && !hanfeizi) ? (
+          <div id="track" className="flexWrapper">
+            <p id="trackKey" className="sectionKey">PHILOSOPHER</p>
+            <p id="trackValue" className="sectionValue">ZHUANGZI</p>
+          </div>
+        ) : (hanfeizi && !mozi && !kongzi && !zhuangzi) ? (
+          <div id="track" className="flexWrapper">
+            <p id="trackKey" className="sectionKey">PHILOSOPHER</p>
+            <p id="trackValue" className="sectionValue">HAN FEIZI</p>
+          </div>
+        ) : (
+          <div id="track" className="flexWrapper">
+            <p id="trackKey" className="sectionKey">PHILOSOPHER</p>
+            <p id="trackValue" className="sectionValue">KONGZI</p>
+          </div>
+        )}
       </div>
     
       <div id="genres" className="flexWrapper">
@@ -95,8 +133,7 @@ const Card = ({
       ) : (
         <img id="smallProfilePic" src={noProfilePic} alt="small default profile pic"></img>
       )}
-
-      <p id="websiteName">LICENSIFY.HEROKUAPP.COM</p>
+      <p id="websiteName">PHILOSOPHIZE.HEROKUAPP.COM</p>
     </div>
   )
 }

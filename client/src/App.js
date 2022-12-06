@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { accessToken, logout } from './spotify';
-import { Login, Profile, About } from './pages';
+import { Login, Profile, About, Kongzi, Zhuangzi, HanFeizi, Mozi } from './pages';
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,17 +21,25 @@ function App() {
   return (
     <div className="App">
       <div id="header">
-        <h1 id="title" className="mainFont">licensify</h1>
+        <h1 id="title" className="mainFont">Philosopher's License</h1>
         <Router>
           <nav>
-            <Link className="link" to="/">my card</Link>
-            <Link className="link" to="/about">about</Link>
+            <Link className="link" to="/">License</Link>
+            <Link className="link" to="/about">About</Link>
+            <Link className="link" to="/kongzi">Kongzi</Link>
+            <Link className='link' to='/zhuangzi'>Zhuangzi</Link>
+            <Link className='link' to='/hanfeizi'>Han Feizi</Link>
+            <Link className='link' to='/mozi'>Mozi</Link>
             {token &&
               <button id="logout" className="link mainFont" onClick={logout}>log out</button>
             }
           </nav>
           <Routes>
             <Route path="/about" element={<About />} />
+            <Route path="/kongzi" element={<Kongzi />} />
+            <Route path="/zhuangzi" element={<Zhuangzi />} />
+            <Route path="/hanfeizi" element={<HanFeizi />} />
+            <Route path="/mozi" element={<Mozi />} />
             {!token ? (
               <Route path="/" element={<Login />} />
             ) : (
@@ -39,12 +47,6 @@ function App() {
             )}
           </Routes>
         </Router>
-      </div>
-      <div id="footerWrapper">
-        <p id="footer">
-          <span>created by </span>
-          <a href="http://jenetic.github.io" target="_blank" rel="noreferrer">jenetic (github)</a>
-        </p>
       </div>
     </div>
   );

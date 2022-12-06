@@ -32,6 +32,7 @@ hr {
   line-height: 1rem;
   overflow-wrap: break-word;
   color: var(--black);
+  margin-left: 20px;
 }
 
 .flexWrapper {
@@ -241,6 +242,7 @@ hr {
 
 #trackValue, #artistValue {
   width: 250px;
+  left: 200px;
 }
 
 #genres {

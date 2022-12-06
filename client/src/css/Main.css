@@ -1,16 +1,33 @@
 :root {
-  --main-text: #000b56;
-  --heading: #00218e;
-  --clickable: #7064ee;
+  --main-text: #b00101;
+  --heading: #3a0902;
+  --clickable: #3e757b;
   --active: #ef38b8;
 }
 
+.center {
+  display: block;
+  margin-left: 370px;
+  margin-right: auto;
+  width: 50%;
+}
+
+.center-mozi {
+  display: block;
+  margin-left: 280px;
+  width: 250px;
+  height: 50%;
+}
+
+.center-img {
+  display: block;
+  margin-left: 300px;
+  width: 250px;
+  height: 50%;
+}
+
 body {
-  background: rgb(255,165,226);
-  background: linear-gradient(60deg, rgb(255,165,226,1) 0%, rgb(201, 165, 255) 35%, rgb(128,243,255) 100%);
-  background-attachment: fixed;
-  font-family: 'Roboto', sans-serif;
-  color: var(--main-text);
+  background-image: url(../img/chill.png);
 }
 
 h2 {
@@ -40,6 +57,7 @@ a:hover {
 
 .mainFont {
   font-family: 'Roboto', sans-serif;
+  color: var(--main-text);
 }
 
 .timeRangeButton {
@@ -98,6 +116,7 @@ a:hover {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  color: var(--main-text);
 }
 
 #loginButton {
