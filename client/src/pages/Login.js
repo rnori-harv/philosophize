@@ -3,7 +3,7 @@ import spotifyIcon from '../img/spotifyIcon.png';
 const LOGIN_URI = 
   process.env.NODE_ENV !== 'production'
     ? 'http://localhost:8888/login'
-    : 'https://licensify.herokuapp.com/login';
+    : 'https://philosophize.herokuapp.com/login';
 
 
 const Login = () => {
